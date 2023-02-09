@@ -3,7 +3,8 @@ import "materialize-css/dist/css/materialize.min.css";
 import Logo from "../img/base_il_cap_logo.png";
 import CardWidget from "./CartWidget";
 
-const NavBar = () => {
+const NavBar = ({name, lastName}) => {
+  
   return (
     <>
       <div class="navbar-fixed">
@@ -31,7 +32,7 @@ const NavBar = () => {
               <li>
                 <a href="#">Cocktails</a>
               </li>
-              <CardWidget/>
+              <CardWidget />
             </ul>
           </div>
         </nav>
@@ -52,8 +53,11 @@ const NavBar = () => {
           <li>
             <a href="#">Cocktails</a>
           </li>
-          <CardWidget/>
+          <CardWidget />
         </ul>
+      </div>
+      <div>
+        <p style={style.greeting}>Usted ha iniciado sesión con el usuario {name} {lastName}.</p>
       </div>
     </>
   );
@@ -72,6 +76,10 @@ const style = {
   nav: {
     backgroundColor: "#DAB88B",
   },
+  greeting: {
+    padding:"0.5rem 0 0 1rem",
+    color: "#B7CADB"
+  }
 };
 
 export default NavBar;
