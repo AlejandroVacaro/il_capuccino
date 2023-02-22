@@ -137,10 +137,23 @@ let productos = [
 
 
 const ItemListContainer = () => {
+  const [products, setProducts] = useState([]);
+  const {name} = useParams();
+  const resultado = name? productos.filter((elemento) => elemento.categoria === name) : productos;
+
+  useEffect(() => {
+    const productosSelecionados = () => {
+      const data = resultado;
+      setProducts(data);
+    };
+
+    productosSelecionados();
+  }, [name]);
+
 
   return (
     <>
-      <ItemList productos={productos} />
+      <ItemList productos={products} />
     </>
   )
 

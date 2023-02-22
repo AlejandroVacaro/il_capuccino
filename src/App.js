@@ -1,14 +1,15 @@
 import React from "react";
 import NavBar from "./components/header/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
-import { ItemDetailContainer } from "./components/ItemDetailContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer"
 import Cart from "./components/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFoundPage from "./components/NotFoundPage";
 
 import "./App.css";
 
 const App = () => {
-  const userName = "Alejandro Vacaro";
+  const userName = "Pepe Botella";
 
   return (
     <>
@@ -16,6 +17,10 @@ const App = () => {
         <NavBar name={userName}/>
         <Routes>
           <Route path="/" element={<ItemListContainer/>} />
+          <Route path="/categoria/:name" element={<ItemListContainer/>} />
+          <Route path="/cart" element={<Cart/>}/>
+          <Route path="/producto/:id" element={<ItemDetailContainer/>} />
+          <Route path="/*" element={<NotFoundPage/>} />
         </Routes>
       </BrowserRouter>
     </>
