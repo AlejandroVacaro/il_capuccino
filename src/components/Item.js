@@ -1,10 +1,10 @@
 import React from "react";
 import "materialize-css/dist/css/materialize.min.css";
 import { Link } from "react-router-dom";
-import M from "materialize-css";
 
 const Item = ({ producto }) => {
   return (
+    <Link to={`/item/${producto.id}`}>
       <div className="col s12 m6 l3">
         <div className="card">
           <div className="card-image">
@@ -12,7 +12,6 @@ const Item = ({ producto }) => {
               style={style.imgStyle}
               src={producto.imagen} />
             <Link
-              to={"/producto/${producto.id}"}
               className="btn-floating halfway-fab waves-effect waves-light red"
             >
               <i className="material-icons">+</i>
@@ -24,6 +23,7 @@ const Item = ({ producto }) => {
           </div>
         </div>
       </div>
+    </Link>
   );
 };
 

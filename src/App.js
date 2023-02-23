@@ -5,7 +5,6 @@ import ItemDetailContainer from "./components/ItemDetailContainer"
 import Cart from "./components/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFoundPage from "./components/NotFoundPage";
-
 import "./App.css";
 
 const App = () => {
@@ -19,7 +18,7 @@ const App = () => {
           <Route path="/" element={<ItemListContainer/>} />
           <Route path="/categoria/:name" element={<ItemListContainer/>} />
           <Route path="/cart" element={<Cart/>}/>
-          <Route path="/producto/:id" element={<ItemDetailContainer/>} />
+          <Route path="/item/:id" element={<ItemDetailContainer/>} />
           <Route path="/*" element={<NotFoundPage/>} />
         </Routes>
       </BrowserRouter>
