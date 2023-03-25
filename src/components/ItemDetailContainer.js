@@ -15,7 +15,7 @@ let productos = [
     nombre: "Café capuccino",
     precio: 190,
     imagen: "https://images.deliveryhero.io/image/pedidosya/products/7bca466d-a84b-493b-89ba-1785fc4703a0.jpg?quality=90&width=1008&webp=1&dpi=1.5",
-    descripcion: "El café cappuccino es una bebida italiana que combina espresso, leche vaporizada y espuma de leche. Se sirve en una taza grande y se puede disfrutar solo o con un poco de chocolate en polvo espolvoreado encima. El resultado es una bebida suave y cremosa con un equilibrio perfecto entre el sabor del café y la dulzura de la leche. El café cappuccino es una opción popular para aquellos que buscan una bebida de café con un toque de elegancia.",
+    descripcion: "El café capuccino es una bebida italiana que combina espresso, leche vaporizada y espuma de leche. Se sirve en una taza grande y se puede disfrutar solo o con un poco de chocolate en polvo espolvoreado encima. El resultado es una bebida suave y cremosa con un equilibrio perfecto entre el sabor del café y la dulzura de la leche. El café cappuccino es una opción popular para aquellos que buscan una bebida de café con un toque de elegancia.",
     categoria: "Cafetería",
     id: "2"
   },
@@ -138,25 +138,25 @@ let productos = [
 
 const ItemDetailContainer = () => {
 
-    const [products, setProducts] = useState([]);
-    const {id} = useParams();
-    const resultado = productos.find((elemento) => elemento.id === id);
-  
-    useEffect(() => {
-      const productosSelecionados = () => {
-        const data = resultado;
-        setProducts(data);
-      };
-  
-      productosSelecionados();
-    }, [id]);
-  
+  const [products, setProducts] = useState([]);
+  const { id } = useParams();
+  const resultado = productos.find((elemento) => elemento.id === id);
 
-    return (
-        <>
-            <ItemDetail productos={products} />
-        </>
-    );
+  useEffect(() => {
+    const productosSelecionados = () => {
+      const data = resultado;
+      setProducts(data);
+    };
+
+    productosSelecionados();
+  }, [id]);
+
+
+  return (
+    <>
+      <ItemDetail productos={products} />
+    </>
+  );
 };
 
 export default ItemDetailContainer;

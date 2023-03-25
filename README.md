@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+#Il Capucchino
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Il Capucchino es una aplicación web de e-commerce que ofrece productos de cafetería, panadería, pastelería y jugos. En nuestra aplicación, los usuarios pueden navegar por las diferentes categorías de productos, ver imágenes y descripciones detalladas de los mismos, y agregarlos a su carrito de compras.
 
-## Available Scripts
+###Características de la aplicación
+**Navegación por categorías:** Los usuarios pueden explorar productos en las categorías: *cafetería, panadería, pastelería y jugos*. Cada categoría muestra una imagen de portada y el precio de cada producto.
 
-In the project directory, you can run:
+**Información detallada de producto:** Los usuarios pueden hacer clic en cualquier producto para ver información detallada, como la descripción del producto, el precio e las imágenes.
 
-### `npm start`
+**Carrito de compras:** Los usuarios pueden agregar productos a su carrito de compras, ver un resumen de su compra, el total a pagar y confirmar su pedido.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Registro de datos del usuario:** Los usuarios una vez confirmada la compra deberán ingresar sus datos de contacto para la entrega del pedido.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Procesamiento de pagos:** Próximamente se estará habilitando las compras con tarjetas de débito y crédito, por el momento sólo contamos con pagos en efectivo al momento de la entrega del pedido.
 
-### `npm test`
+**Gestión de pedidos:** Al finalizar la compra y el registro de datos de contacto, se le mostrará al usuario el código de pedido, con el cual podrá llamarnos para consultar el estado del mismo, próximamente se agregará la funcionalidad de seguimiento online.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##Tecnologías utilizadas
+- React.js *(creado a partir de Create-React-App)*
+- Node.js
+- HTML
+- CSS
+- Tailwind
+- Firebase
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##Instalación y uso
+Para utilizar Il Capucchino, los usuarios deben ingresar a la página [Il Capuccino](il_capucchino.com) desde dispositivos de escritorio, tablets o celulares, sin la necesidad de instalar nada.
+Los usuarios pueden filtrar por categorías los productos o bien tener una vista general de los mismos, pueden clickear uno de ellos para ver un detalle, su precio y en caso de desearlo agregarlo al carrito. Una vez que hayan elegido y agregado productos a su carrito de compras, pueden confirmar su pedido e ingresar los datos de conectato para el envío del pedido. 
