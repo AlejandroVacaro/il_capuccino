@@ -21,9 +21,7 @@ const NavBar = ({ name }) => {
             <ul className="right hide-on-med-and-down">
               <NavCategories />
               <li>
-                <Link to={"/cart"}>
                 <CardWidget />
-              </Link>
               </li>
             </ul>
           </div>

@@ -13,7 +13,7 @@ const NavCategories = () => {
             <>
                 {categorias.map((categoria) => {
                     return (
-                        <li><NavLink key={categoria.id} to={categoria.route}>{categoria.name}</NavLink></li>
+                        <li key={categoria.id} ><NavLink to={categoria.route}>{categoria.name}</NavLink></li>
                     );
                 })}
             </>

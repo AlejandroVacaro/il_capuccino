@@ -47,9 +47,4 @@ export const CartProvider = ({ children }) => {
 
 
 
-
-
-
-
-
 }
