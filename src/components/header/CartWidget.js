@@ -11,13 +11,11 @@ const CardWidget = () => {
     <>
       <Link to={"/cart"}>
         <li>
-          <a href="#">
             <i className="material-icons">
               <ShoppingCartIcon />
               <Badge badgeContent={cantidad > 0 && <p>{cantidad}</p>} color="error">
               </Badge>
             </i>
-          </a>
         </li>
       </Link>
     </>
