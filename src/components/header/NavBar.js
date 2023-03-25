@@ -9,16 +9,16 @@ const NavBar = ({ name }) => {
 
   return (
     <header>
-      <div class="navbar-fixed">
+      <div className="navbar-fixed">
         <nav style={style.nav}>
-          <div class="nav-wrapper container">
-            <Link to={"/"} class="brand-logo" style={style.anchor}>
+          <div className="nav-wrapper container">
+            <Link to={"/"} className="brand-logo" style={style.anchor}>
               <img style={style.logo} src={Logo} alt="Logo de la empresa" />
             </Link>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-              <i class="material-icons">menu</i>
+            <a href="#" data-target="mobile-demo" className="sidenav-trigger">
+              <i className="material-icons">menu</i>
             </a>
-            <ul class="right hide-on-med-and-down">
+            <ul className="right hide-on-med-and-down">
               <NavCategories />
               <li>
                 <Link to={"/cart"}>
@@ -30,7 +30,7 @@ const NavBar = ({ name }) => {
           <p style={style.indicadorUsuario}>Usted ha iniciado sesión con el usuario: {name}</p>
         </nav>
 
-        <ul class="sidenav" id="mobile-demo">
+        <ul className="sidenav" id="mobile-demo">
           <NavCategories />
           <Link to={"/cart"}>
             <CardWidget />

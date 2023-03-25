@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Badge } from "@mui/material";
+import { CartContext } from "../context/CartContext"
 
 const CardWidget = () => {
+  const { totales } = useContext(CartContext);
   return (
     <>
       <li>
         <a href="#">
-          <i class="material-icons">
+          <i className="material-icons">
             <ShoppingCartIcon />
-            <Badge badgeContent={4} color="error">
+            <Badge badgeContent={totales.cantidad > 0 && <p>{totales.cantidad}</p>} color="error">
             </Badge>
           </i>
         </a>
