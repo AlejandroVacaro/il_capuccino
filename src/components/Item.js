@@ -11,15 +11,10 @@ const Item = ({ producto }) => {
             <img
               style={style.imgStyle}
               src={producto.imagen} />
-            <Link
-              className="btn-floating halfway-fab waves-effect waves-light red"
-            >
-              <i className="material-icons">+</i>
-            </Link>
           </div>
           <div className="card-content">
-            <span className="card-title">{producto.nombre}</span>
-            <p>${producto.precio}</p>
+            <p className="card-title" style={style.pName}>{producto.nombre}</p>
+            <p style={style.pStyle}>${producto.precio}</p>
           </div>
         </div>
       </div>
@@ -34,4 +29,11 @@ const style = {
     width: "100%",
     height: "auto",
   },
+  pStyle: {
+    fontSize: "20px",
+  },
+  pName: {
+    fontWeight: "normal",
+    fontSize: "25px",
+  }
 };

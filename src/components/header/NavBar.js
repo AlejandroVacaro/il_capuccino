@@ -30,9 +30,9 @@ const NavBar = ({ name }) => {
 
         <ul className="sidenav" id="mobile-demo">
           <NavCategories />
-          <Link to={"/cart"}>
+          <li>
             <CartWidget />
-          </Link>
+          </li>
         </ul>
       </div>
     </header>
