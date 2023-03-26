@@ -2,7 +2,7 @@ import React from "react";
 import "materialize-css/dist/css/materialize.min.css";
 import Logo from "../../img/base_il_cap_logo.png";
 import NavCategories from "./NavCategories";
-import CardWidget from "./CartWidget";
+import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 
 const NavBar = ({ name }) => {
@@ -21,7 +21,7 @@ const NavBar = ({ name }) => {
             <ul className="right hide-on-med-and-down">
               <NavCategories />
               <li>
-                <CardWidget />
+                <CartWidget />
               </li>
             </ul>
           </div>
@@ -31,7 +31,7 @@ const NavBar = ({ name }) => {
         <ul className="sidenav" id="mobile-demo">
           <NavCategories />
           <Link to={"/cart"}>
-            <CardWidget />
+            <CartWidget />
           </Link>
         </ul>
       </div>
