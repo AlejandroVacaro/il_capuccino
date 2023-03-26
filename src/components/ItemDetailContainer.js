@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
 
-    const productosStock = (dataBase, "stockProductos")
+    const productosStock = collection(dataBase, "stockProductos");
     const refDoc = doc(productosStock, id)
     getDoc(refDoc).then(
       (data) => {
