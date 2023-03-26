@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useState, useContext } from "react";
+import ItemCount from "./ItemCount";
+import { Link } from "react-router-dom";
+import { CartContext } from "./context/CartContext";
 
-export const ItemDetail = ({ productos }) => {
+
+const ItemDetail = ({ productos }) => {
+
+    const [botonPresionado, setBotonPresionado] = useState(false);
+    const {agregarProductos} = useContext(CartContext);
+
+    const agregar = (count) => {
+        setBotonPresionado(true);
+        agregarProductos(productos, count);
+    };
+
     return (
         <div style={style.containerDetail}>
             <img style={style.imgDetail} alt={productos.nombre} src={productos.imagen} />
@@ -8,6 +21,15 @@ export const ItemDetail = ({ productos }) => {
                 <h1 style={style.textDetail} >{productos.nombre}</h1>
                 <h2 style={style.textDetail} >${productos.precio}</h2>
                 <p style={style.textDetailP} >{productos.descripcion}</p>
+            </div>
+            <div>
+                {botonPresionado ? (
+                    <Link to="/cart">
+                        <button>Continuar compra</button>
+                    </Link>
+                ) : (
+                    <ItemCount agregar={agregar} />
+                )}
             </div>
         </div>
     )

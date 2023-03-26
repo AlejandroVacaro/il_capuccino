@@ -20,7 +20,7 @@ Il Capucchino es una aplicación web de e-commerce que ofrece productos de cafet
 - Node.js
 - HTML
 - CSS
-- Tailwind
+- Materialize
 - Firebase
 
 ##Instalación y uso

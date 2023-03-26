@@ -1,37 +1,9 @@
 import React, { useContext } from "react";
 import { CartContext } from "./context/CartContext";
 import { Link } from "react-router-dom";
-import { collection, addDoc, serverTimestamp, doc, updateDoc } from "firebase/firestore";
-import { dataBase } from "../firebase/firestore";
 
 const Cart = () => {
   const { cart, totales } = useContext(CartContext);
-
-  const cliente = {
-    nombre: "",
-    apellido: "",
-    email: "",
-    celular: "",
-    domicilio: "",
-  }
-
-  const handlerClickVentas = () => {
-    const coleccionVentas = collection(dataBase, "ventas");
-    addDoc(
-      coleccionVentas, {
-      cliente,
-      item: cart,
-      total: totales.total,
-      time: serverTimestamp(),
-    }
-    )
-      .then(result => console.log(result.id))
-  };
-
-  const handlerStock = () => {
-    const docReference = doc(dataBase, "stockProductos", cart.producto.id);
-    updateDoc(docReference, { stock: cart.producto.stock - cart.producto.cantidad})
-  };
 
   return (
     <>
@@ -54,7 +26,6 @@ const Cart = () => {
             })}
           </div>
           <h1>TOTAL: {totales.total}</h1>
-          <button onClick={handlerStock}>Finalizar compra</button>
         </>
       )}
     </>
