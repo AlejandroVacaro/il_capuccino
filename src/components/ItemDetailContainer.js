@@ -34,7 +34,7 @@ const ItemDetailContainer = () => {
     <>
       {<>{loading ?
         <div style={style.divCargandoP}>
-          <h1 style={style.sitioCargandoP}>Cargando productos...</h1>
+          <p style={style.sitioCargandoP}>Cargando productos...</p>
           <img style={style.imgCargandoP} src="https://media.istockphoto.com/id/1175851148/es/vector/personaje-de-la-taza-de-caf%C3%A9-kawaii-en-poses-meditada.jpg?s=612x612&w=0&k=20&c=kceTKZaDyLuFlb6LcSmnnWYpiHJxlWcOf19f0mMLQm0=" />
         </div>
         : <ItemDetail productos={products} />}</>}
@@ -49,13 +49,15 @@ const style = {
   divCargandoP: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    fontSize: "45px",
   },
   sitioCargandoP: {
     marginTop: "60px",
+    color: "#039be5",
   },
   imgCargandoP: {
-    width: "40%",
+    width: "20%",
     height: "auto",
     borderRadius: "100%"
   }

@@ -24,5 +24,5 @@ Il Capucchino es una aplicación web de e-commerce que ofrece productos de cafet
 - Firebase
 
 ##Instalación y uso
-Para utilizar Il Capucchino, los usuarios deben ingresar a la página [Il Capuccino](il_capucchino.com) desde dispositivos de escritorio, tablets o celulares, sin la necesidad de instalar nada.
+Para utilizar Il Capucchino, los usuarios deben ingresar a la página [Il Capuccino](https://il-capucchino.netlify.app/) desde dispositivos de escritorio, tablets o celulares, sin la necesidad de instalar nada.
 Los usuarios pueden filtrar por categorías los productos o bien tener una vista general de los mismos, pueden clickear uno de ellos para ver un detalle, su precio y en caso de desearlo agregarlo al carrito. Una vez que hayan elegido y agregado productos a su carrito de compras, pueden confirmar su pedido e ingresar los datos de conectato para el envío del pedido. 

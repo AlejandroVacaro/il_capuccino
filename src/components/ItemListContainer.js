@@ -39,14 +39,14 @@ const ItemListContainer = () => {
             <ItemList productos={products} />
           ) : (
             <div style={style.divCargando}>
-              <h1 style={style.sitioCargando}>Cargando productos...</h1>
+              <p style={style.sitioCargando}>Cargando productos...</p>
               <img style={style.imgCargando} src="https://media.istockphoto.com/id/1175851148/es/vector/personaje-de-la-taza-de-caf%C3%A9-kawaii-en-poses-meditada.jpg?s=612x612&w=0&k=20&c=kceTKZaDyLuFlb6LcSmnnWYpiHJxlWcOf19f0mMLQm0=" />
             </div>
           )}
         </>
       ) : (
         <div style={style.divError}>
-          <h1 style={style.sitioError}>Ocurrió un error, recargue la página.</h1>
+          <p style={style.sitioError}>Ocurrió un error, recargue la página.</p>
           <img style={style.imgError} src="https://static.vecteezy.com/system/resources/previews/006/796/852/non_2x/sad-coffee-character-in-flat-style-illustration-coffee-cup-cartoon-character-with-funny-expression-free-vector.jpg" />
         </div>
       )}
@@ -65,9 +65,11 @@ const style = {
   },
   sitioError: {
     marginTop: "60px",
+    fontSize: "45px",
+    color: "#039be5",
   },
   imgError: {
-    width:"40%",
+    width:"20%",
     height: "auto",
     borderRadius: "100%"
   },
@@ -78,9 +80,11 @@ const style = {
   },
   sitioCargando: {
     marginTop: "60px",
+    fontSize: "45px",
+    color: "#039be5",
   },
   imgCargando: {
-    width:"40%",
+    width:"20%",
     height: "auto",
     borderRadius: "100%"
   }

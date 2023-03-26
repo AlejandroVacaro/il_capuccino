@@ -6,6 +6,7 @@ import Cart from "./components/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFoundPage from "./components/NotFoundPage";
 import "./App.css";
+import Checkout from "./components/Checkout";
 
 const App = () => {
   const userName = "Pepe Botella";
@@ -13,13 +14,14 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <NavBar name={userName}/>
+        <NavBar name={userName} />
         <Routes>
-          <Route path="/" element={<ItemListContainer/>} />
-          <Route path="/categoria/:name" element={<ItemListContainer/>} />
-          <Route path="/cart" element={<Cart/>}/>
-          <Route path="/item/:id" element={<ItemDetailContainer/>} />
-          <Route path="/*" element={<NotFoundPage/>} />
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/categoria/:name" element={<ItemListContainer />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -53,7 +53,7 @@ const style = {
     backgroundColor: "#DAB88B",
   },
   indicadorUsuario: {
-    color: "#B7CADB",
+    color: "#039be5",
     paddingLeft: "8px",
     backgroundColor: "#FDF6EC"
   }

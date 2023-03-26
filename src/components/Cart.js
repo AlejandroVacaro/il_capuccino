@@ -8,10 +8,11 @@ const Cart = () => {
   return (
     <>
       {!cart.length ? (
-        <>
-          <h1>El carrito está vacío.</h1>
-          <h2><Link to={"/"}>Ir a inicio</Link></h2>
-        </>
+        <div style={style.divCarritoVacio}>
+          <p style={style.carritoVacio}>El carrito está vacío.</p>
+          <img style={style.imgCarritoVacio} src="https://static.vecteezy.com/system/resources/previews/006/796/852/non_2x/sad-coffee-character-in-flat-style-illustration-coffee-cup-cartoon-character-with-funny-expression-free-vector.jpg" />
+          <p style={style.volverInicio}><Link to={"/"}>Ir a inicio</Link></p>
+        </div>
       ) : (
         <>
           <div>
@@ -26,6 +27,9 @@ const Cart = () => {
             })}
           </div>
           <h1>TOTAL: {totales.total}</h1>
+          <Link to="/checkout">
+            <button>Finalizar compra</button>
+          </Link>
         </>
       )}
     </>
@@ -34,3 +38,25 @@ const Cart = () => {
 };
 
 export default Cart;
+
+const style = {
+  divCarritoVacio: {
+    marginTop: "100px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+  },
+  carritoVacio: {
+    fontSize: "45px",
+    color: "#039be5",
+
+  },
+  volverInicio: {
+    fontSize: "35px"
+  },
+  imgCarritoVacio: {
+    width: "20%",
+    height: "auto",
+    borderRadius: "100%"
+  }
+}

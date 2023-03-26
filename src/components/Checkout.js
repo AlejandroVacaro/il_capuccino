@@ -2,10 +2,10 @@ import React, { useContext, useState } from "react";
 import { CartContext } from "./context/CartContext";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { dataBase } from "../firebase/firestore";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
-    const { cart, totales, clearCart } = useContext(CartContext);
+    const { cart, totales, vaciarCarrito } = useContext(CartContext);
     const [cliente, setCliente] = useState({
         nombre: "",
         apellido: "",
@@ -14,7 +14,7 @@ const Checkout = () => {
         domicilio: "",
     });
     const [mensaje, setMensaje] = useState("");
-    const history = useHistory();
+    const history = useNavigate();
 
     const handleChange = (e) => {
         setCliente({
@@ -32,7 +32,7 @@ const Checkout = () => {
             time: serverTimestamp(),
         })
             .then(() => {
-                clearCart();
+                vaciarCarrito();
                 setMensaje("La compra se realizó con éxito");
                 setTimeout(() => {
                     setMensaje("");
@@ -44,6 +44,7 @@ const Checkout = () => {
                 setMensaje("Error al realizar la compra, intente nuevamente");
             });
     };
+
 
     return (
         <>
