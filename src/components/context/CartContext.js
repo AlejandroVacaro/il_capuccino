@@ -11,11 +11,12 @@ export const CartProvider = ({ children }) => {
         let total = 0;
         cart.forEach((producto) => {
             cantidadInicial += producto.cantidad;
-            total = + producto.cantidad * producto.precio;
+            total += producto.cantidad * producto.precio;
         });
         setTotales({ cantidad: cantidadInicial, total: total })
     }, [cart]
     );
+
 
     const enCarrito = (id) => cart.some((producto) => producto.id === id);
 
@@ -44,7 +45,5 @@ export const CartProvider = ({ children }) => {
             {children}
         </CartContext.Provider>
     )
-
-
 
 }

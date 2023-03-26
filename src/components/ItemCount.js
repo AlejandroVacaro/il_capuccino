@@ -24,25 +24,19 @@ const ItemCount = ({ agregar, stock = 5 }) => {
 
     return (
         <div>
-            <div>
-                <a
-                    className="btn-floating btn-large waves-effect waves-light red"
-                    onClick={handlerClickQuitar}
-                >
+            <div style={style.count}>
+                <a className="btn-floating btn-large waves-effect waves-light deep-orange accent-2"
+                    onClick={handlerClickQuitar}>
                     <i className="material-icons">-</i>
                 </a>
-                <h2>{count}</h2>
-                <a
-                    className="btn-floating btn-large waves-effect waves-light red"
-                    onClick={handlerClickAgregar}
-                >
+                <h2 style={style.contador}>{count}</h2>
+                <a className="btn-floating btn-large waves-effect waves-light deep-orange accent-2"
+                    onClick={handlerClickAgregar}>
                     <i className="material-icons">+</i>
                 </a>
             </div>
-            <a
-                className="waves-effect waves-light btn-large"
-                onClick={agregarAlCarrito}
-            >
+            <a className="waves-effect waves-light btn-large  light-blue lighten-1"
+                onClick={agregarAlCarrito}>
                 Agregar al carrito
             </a>
         </div>
@@ -50,3 +44,17 @@ const ItemCount = ({ agregar, stock = 5 }) => {
 };
 
 export default ItemCount;
+
+const style = {
+    count: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center"
+    },
+    contador: {
+        marginTop: "0",
+        marginBottom: "15px",
+        paddingRight: "30px",
+        paddingLeft: "30px"
+    }
+}
