@@ -7,7 +7,7 @@ import { CartContext } from "./context/CartContext";
 const ItemDetail = ({ productos }) => {
 
     const [botonPresionado, setBotonPresionado] = useState(false);
-    const {agregarProductos} = useContext(CartContext);
+    const { agregarProductos } = useContext(CartContext);
 
     const agregar = (count) => {
         setBotonPresionado(true);
@@ -15,14 +15,16 @@ const ItemDetail = ({ productos }) => {
     };
 
     return (
-        <div style={style.containerDetail}>
-            <img style={style.imgDetail} alt={productos.nombre} src={productos.imagen} />
-            <div>
-                <h1 style={style.textDetail} >{productos.nombre}</h1>
-                <h2 style={style.textDetail} >${productos.precio}</h2>
-                <p style={style.textDetailP} >{productos.descripcion}</p>
+        <>
+            <div style={style.containerDetail}>
+                <img style={style.imgDetail} alt={productos.nombre} src={productos.imagen} />
+                <div>
+                    <h1 style={style.textDetail} >{productos.nombre}</h1>
+                    <h2 style={style.textDetail} >${productos.precio}</h2>
+                    <p style={style.textDetailP} >{productos.descripcion}</p>
+                </div>
             </div>
-            <div>
+            <div style={style.botones}>
                 {botonPresionado ? (
                     <Link to="/cart">
                         <button>Continuar compra</button>
@@ -31,7 +33,8 @@ const ItemDetail = ({ productos }) => {
                     <ItemCount agregar={agregar} />
                 )}
             </div>
-        </div>
+        </>
+
     )
 }
 
@@ -59,5 +62,11 @@ const style = {
         paddingRight: "10px",
         paddingLeft: "10px",
         paddingBottom: "15px"
+    },
+    botones: {
+        marginTop: "20px",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center"
     }
 }

@@ -24,17 +24,17 @@ export const CartProvider = ({ children }) => {
     const vaciarCarrito = () => setCart([]);
 
 
-    const agregarProductos = (producto, cantidades) => {
+    const agregarProductos = (producto, cantidad) => {
         if (enCarrito(producto.id)) {
             setCart(
                 cart.map((productoCarrito) => {
                     if (productoCarrito.id === producto.id)
-                        return { ...productoCarrito, cantidades };
+                        return { ...productoCarrito, cantidad };
                     return productoCarrito;
                 })
             );
         } else {
-            setCart([...cart, { ...producto, cantidades }]);
+            setCart([...cart, { ...producto, cantidad }]);
         }
     };
 
