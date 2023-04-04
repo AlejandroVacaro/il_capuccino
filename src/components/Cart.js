@@ -15,21 +15,29 @@ const Cart = () => {
         </div>
       ) : (
         <>
-          <div>
-            {cart.map((producto) => {
-              return (
-                <div key={producto.id}>
-                  <h1>{producto.nombre}</h1>
-                  <h2>Precio: {producto.precio}</h2>
-                  <h2>Cantidad: {producto.cantidad}</h2>
-                </div>
-              );
-            })}
+          <div style={style.detalleCarrito}>
+            <p style={style.pDetalle}>Detalle de su compra:</p>
+            <div style={style.detalleCompra}>
+              {cart.map((producto) => {
+                return (
+                  <div key={producto.id} style={style.detalleProducto}>
+                    <div style={style.divImgCarrito}>
+                      <img src={producto.imagen} style={style.imgCarrito} />
+                    </div>
+                      <p style={style.pProductoNombre}>{producto.nombre}</p>
+                      <p style={style.pProducto}>Cantidad: {producto.cantidad}</p>
+                      <p style={style.precioProducto}>$ {producto.precio}</p>
+                  </div>
+                );
+              })}
+            </div>
+            <p style={style.pTotal}>TOTAL: ${totales.total}</p>
+            <Link to="/checkout">
+              <a style={style.finalizarCompra} className="waves-effect waves-light btn-large">
+                Finalizar compra
+              </a>
+            </Link>
           </div>
-          <h1>TOTAL: {totales.total}</h1>
-          <Link to="/checkout">
-            <button>Finalizar compra</button>
-          </Link>
         </>
       )}
     </>
@@ -58,5 +66,59 @@ const style = {
     width: "20%",
     height: "auto",
     borderRadius: "100%"
+  },
+  detalleCarrito: {
+    backgroundColor: "white",
+    boxShadow: "0px 10px 15px -3px rgba(0,0,0,0.1)",
+    marginTop: "60px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  imgCarrito: {
+    width: "100%",
+    height: "auto"
+  },
+  pProducto: {
+    fontSize: "1.2rem"
+  },
+  detalleProducto: {
+    display: "flex",
+    justifyContent: "spaceBetween",
+    gap: "50px",
+    padding: "2rem",
+    borderBottom:"solid 1px grey"
+  },
+  divImgCarrito: {
+    width: "100px",
+  },
+  finalizarCompra: {
+    backgroundColor: "rgb(3, 155, 229)",
+    fontSize: "1.2rem",
+    marginBottom: "20px",
+  },
+  pDetalle: {
+    fontSize: "2rem",
+    marginBottom: "40px",
+    marginTop: "20px"
+  },
+  pTotal: {
+    fontSize: "2rem",
+    marginBottom: "20px",
+    marginTop: "20px",
+    fontWeight: "bold"
+  },
+  precioProducto: {
+    fontSize: "1.5rem",
+    marginLeft: "auto"
+  },
+  pProductoNombre: {
+    fontWeight: "bold",
+    fontSize: "1.5rem"
+  },
+  detalleCompra: {
+    with: "auto",
+    height: "400px",
+    overflowY: "scroll"
   }
 }

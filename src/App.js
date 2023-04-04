@@ -13,17 +13,21 @@ const App = () => {
 
   return (
     <>
+
       <BrowserRouter>
         <NavBar name={userName} />
-        <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/categoria/:name" element={<ItemListContainer />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/item/:id" element={<ItemDetailContainer />} />
-          <Route path="/*" element={<NotFoundPage />} />
-        </Routes>
-      </BrowserRouter>
+        <div style={style.margenesGrles}>
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
+            <Route path="/categoria/:name" element={<ItemListContainer />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/item/:id" element={<ItemDetailContainer />} />
+            <Route path="/*" element={<NotFoundPage />} />
+          </Routes>
+        </div>
+      </BrowserRouter >
+
     </>
   );
 };
@@ -35,4 +39,8 @@ const style = {
     padding: "0.5rem 0 0 1rem",
     color: "#B7CADB",
   },
+  margenesGrles: {
+    paddingLeft: "10%",
+    paddingRight: "10%"
+  }
 };

@@ -48,55 +48,100 @@ const Checkout = () => {
 
     return (
         <>
-            <h1>Checkout</h1>
-            <form>
-                <label htmlFor="nombre">Nombre</label>
-                <input
-                    type="text"
-                    name="nombre"
-                    value={cliente.nombre}
-                    onChange={handleChange}
-                    required
-                />
-                <label htmlFor="apellido">Apellido</label>
-                <input
-                    type="text"
-                    name="apellido"
-                    value={cliente.apellido}
-                    onChange={handleChange}
-                    required
-                />
-                <label htmlFor="email">Email</label>
-                <input
-                    type="email"
-                    name="email"
-                    value={cliente.email}
-                    onChange={handleChange}
-                    required
-                />
-                <label htmlFor="celular">Celular</label>
-                <input
-                    type="tel"
-                    name="celular"
-                    value={cliente.celular}
-                    onChange={handleChange}
-                    required
-                />
-                <label htmlFor="domicilio">Domicilio</label>
-                <input
-                    type="text"
-                    name="domicilio"
-                    value={cliente.domicilio}
-                    onChange={handleChange}
-                    required
-                />
-                <button type="button" onClick={handlerClick}>
-                    Comprar
-                </button>
-            </form>
-            {mensaje && <p>{mensaje}</p>}
+            <div style={style.contenedorFormulario}>
+                <div style={style.formulario}>
+                    <p style={style.datosEnvio}>Datos de envío</p>
+                    <form>
+                        <label style={style.label} htmlFor="nombre">Nombre</label>
+                        <input
+                            style={style.input}
+                            type="text"
+                            name="nombre"
+                            value={cliente.nombre}
+                            onChange={handleChange}
+                            required
+                        />
+                        <label style={style.label} htmlFor="apellido">Apellido</label>
+                        <input
+                            style={style.input}
+                            type="text"
+                            name="apellido"
+                            value={cliente.apellido}
+                            onChange={handleChange}
+                            required
+                        />
+                        <label style={style.label} htmlFor="email">Email</label>
+                        <input
+                            style={style.input}
+                            type="email"
+                            name="email"
+                            value={cliente.email}
+                            onChange={handleChange}
+                            required
+                        />
+                        <label style={style.label} htmlFor="celular">Celular</label>
+                        <input
+                            style={style.input}
+                            type="tel"
+                            name="celular"
+                            value={cliente.celular}
+                            onChange={handleChange}
+                            required
+                        />
+                        <label style={style.label} htmlFor="domicilio">Domicilio</label>
+                        <input
+                            style={style.input}
+                            type="text"
+                            name="domicilio"
+                            value={cliente.domicilio}
+                            onChange={handleChange}
+                            required
+                        />
+                        <div style={style.divBoton}>
+                            <a style={style.enviarPedido} onClick={handlerClick} className="waves-effect waves-light btn-large">
+                                Enviar pedido
+                            </a>
+                        </div>
+                    </form>
+                    {mensaje && <p>{mensaje}</p>}
+                </div>
+            </div>
         </>
     );
 };
 
 export default Checkout;
+
+const style = {
+    contenedorFormulario: {
+        display: "flex",
+        justifyContent: "center"
+    },
+    formulario: {
+        width: "70%",
+        marginTop: "80px",
+        boxShadow: "0px 10px 15px -3px rgba(0,0,0,0.1)",
+        backgroundColor: "white",
+        padding: "2rem"
+    },
+    datosEnvio: {
+        textAlign: "center",
+        fontSize: "2rem"
+    },
+    enviarPedido: {
+        backgroundColor: "rgb(3, 155, 229)",
+        fontSize: "1.2rem",
+        marginTop: "20px",
+        marginBottom: "20px",
+    },
+    label: {
+        fontSize: "1.2rem"
+    },
+    divBoton: {
+        display: "flex",
+        justifyContent: "center"
+    },
+    input: {
+        fontSize: "1.2rem"
+    }
+}

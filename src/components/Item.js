@@ -34,6 +34,6 @@ const style = {
   },
   pName: {
     fontWeight: "normal",
-    fontSize: "25px",
+    fontSize: "20px",
   }
 };

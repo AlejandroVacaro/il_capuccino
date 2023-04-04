@@ -59,8 +59,8 @@ export default ItemListContainer;
 
 const style = {
   divError: {
-    display:"flex",
-    flexDirection:"column",
+    display: "flex",
+    flexDirection: "column",
     alignItems: "center"
   },
   sitioError: {
@@ -69,13 +69,13 @@ const style = {
     color: "#039be5",
   },
   imgError: {
-    width:"20%",
+    width: "20%",
     height: "auto",
     borderRadius: "100%"
   },
   divCargando: {
-    display:"flex",
-    flexDirection:"column",
+    display: "flex",
+    flexDirection: "column",
     alignItems: "center"
   },
   sitioCargando: {
@@ -84,7 +84,7 @@ const style = {
     color: "#039be5",
   },
   imgCargando: {
-    width:"20%",
+    width: "20%",
     height: "auto",
     borderRadius: "100%"
   }

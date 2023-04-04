@@ -25,17 +25,17 @@ const ItemCount = ({ agregar, stock = 5 }) => {
     return (
         <div>
             <div style={style.count}>
-                <a className="btn-floating btn-large waves-effect waves-light deep-orange accent-2"
+                <a style={style.sumarRestar} className="btn-floating btn-small waves-effect waves-light"
                     onClick={handlerClickQuitar}>
                     <i className="material-icons">-</i>
                 </a>
-                <h2 style={style.contador}>{count}</h2>
-                <a className="btn-floating btn-large waves-effect waves-light deep-orange accent-2"
+                <p style={style.contador}>{count}</p>
+                <a style={style.sumarRestar} className="btn-floating btn-small waves-effect waves-light"
                     onClick={handlerClickAgregar}>
                     <i className="material-icons">+</i>
                 </a>
             </div>
-            <a className="waves-effect waves-light btn-large  light-blue lighten-1"
+            <a style={style.botonAgregar} className="waves-effect waves-light btn-small  "
                 onClick={agregarAlCarrito}>
                 Agregar al carrito
             </a>
@@ -49,12 +49,19 @@ const style = {
     count: {
         display: "flex",
         flexDirection: "row",
-        justifyContent: "center"
+        justifyContent: "center",
+        fontSize: "1.7rem"
     },
     contador: {
         marginTop: "0",
         marginBottom: "15px",
         paddingRight: "30px",
         paddingLeft: "30px"
+    },
+    sumarRestar: {
+        backgroundColor: "rgb(218, 184, 139)",
+    },
+    botonAgregar: {
+        backgroundColor: "rgb(3, 155, 229)",
     }
 }

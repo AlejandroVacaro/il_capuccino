@@ -14,8 +14,8 @@ export default NotFoundPage;
 const style = {
   divNotFoundPage: {
     fontSize: "45px",
-    display:"flex",
-    flexDirection:"column",
+    display: "flex",
+    flexDirection: "column",
     alignItems: "center",
     color: "#039be5",
   },
@@ -24,7 +24,7 @@ const style = {
   },
   imgNotFoundPage: {
     marginTop: "25px",
-    width:"20%",
+    width: "20%",
     height: "auto",
     borderRadius: "100%"
   }
