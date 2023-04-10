@@ -14,6 +14,8 @@ const ItemDetail = ({ productos }) => {
         agregarProductos(productos, count);
     };
 
+    const productoId = productos.id;
+
     return (
         <>
             <div style={style.containerDetail}>
@@ -24,13 +26,11 @@ const ItemDetail = ({ productos }) => {
                     <h2 style={style.textDetail} >${productos.precio}</h2>
                     <div style={style.botones}>
                         {botonPresionado ? (
-                            <Link to="/cart">
-                                <a style={style.continuarCompra} className="waves-effect waves-light btn-small">
+                            <Link to="/cart" style={style.continuarCompra} className="waves-effect waves-light btn-small">
                                     Continuar compra
-                                </a>
                             </Link>
                         ) : (
-                            <ItemCount agregar={agregar} />
+                            <ItemCount agregar={agregar} productoId={productoId}/>
                         )}
                     </div>
                 </div>

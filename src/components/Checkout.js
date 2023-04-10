@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { CartContext } from "./context/CartContext";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { dataBase } from "../firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import M, { Modal } from "materialize-css";
 
 const Checkout = () => {
     const { cart, totales, vaciarCarrito } = useContext(CartContext);
@@ -14,7 +15,8 @@ const Checkout = () => {
         domicilio: "",
     });
     const [mensaje, setMensaje] = useState("");
-    const history = useNavigate();
+    const modalRef = useRef(null);
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setCliente({
@@ -31,13 +33,21 @@ const Checkout = () => {
             total: totales.total,
             time: serverTimestamp(),
         })
-            .then(() => {
-                vaciarCarrito();
-                setMensaje("La compra se realizó con éxito");
-                setTimeout(() => {
-                    setMensaje("");
-                    history.push("/");
-                }, 3000);
+            .then((docRef) => {
+                if (!window.closed) {
+                    vaciarCarrito();
+                    const mensaje = "La compra se realizó con éxito, su número de orden es: " + docRef.id;
+                    setMensaje(mensaje);
+                    if (modalRef.current) {
+                        M.Modal.getInstance(modalRef.current).open();
+                    }
+                    setTimeout(() => {
+                        if (!window.closed) {
+                            setMensaje("");
+                            navigate("/");
+                        }
+                    }, 5000);
+                }
             })
             .catch((error) => {
                 console.error("Error adding document: ", error);
@@ -45,6 +55,16 @@ const Checkout = () => {
             });
     };
 
+    useEffect(() => {
+        const elem = document.getElementById("modal1");
+        const options = {
+            onCloseEnd: () => {
+                setMensaje("");
+            },
+            inDuration: 300,
+        };
+        const instance = M.Modal.init(elem, options);
+    }, []);
 
     return (
         <>
@@ -98,12 +118,27 @@ const Checkout = () => {
                             required
                         />
                         <div style={style.divBoton}>
-                            <a style={style.enviarPedido} onClick={handlerClick} className="waves-effect waves-light btn-large">
+                            <a style={style.enviarPedido} onClick={handlerClick} className="waves-effect waves-light btn-large modal-trigger" data-target="modal1">
                                 Enviar pedido
                             </a>
                         </div>
                     </form>
-                    {mensaje && <p>{mensaje}</p>}
+                    {mensaje && (
+                        <div id="modal1" className="modal">
+                            <div className="modal-content">
+                                <h4>Compra realizada</h4>
+                                <p>{mensaje}</p>
+                            </div>
+                            <div className="modal-footer">
+                                <a
+                                    href="#!"
+                                    className="modal-close waves-effect waves-green btn-flat"
+                                >
+                                    Cerrar
+                                </a>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         </>

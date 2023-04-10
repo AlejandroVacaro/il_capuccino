@@ -3,7 +3,7 @@ import { CartContext } from "./context/CartContext";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cart, totales } = useContext(CartContext);
+  const { cart, totales, eliminarProducto, vaciarCarrito } = useContext(CartContext);
 
   return (
     <>
@@ -24,18 +24,24 @@ const Cart = () => {
                     <div style={style.divImgCarrito}>
                       <img src={producto.imagen} style={style.imgCarrito} />
                     </div>
-                      <p style={style.pProductoNombre}>{producto.nombre}</p>
-                      <p style={style.pProducto}>Cantidad: {producto.cantidad}</p>
-                      <p style={style.precioProducto}>$ {producto.precio}</p>
+                    <p style={style.pProductoNombre}>{producto.nombre}</p>
+                    <p style={style.pProducto}>Cantidad: {producto.cantidad}</p>
+                    <p style={style.precioProducto}>$ {producto.precio}</p>
+                    <a className="waves-effect waves-light btn-small"
+                      onClick={() => eliminarProducto(producto.id)}>
+                      Eliminar
+                    </a>
                   </div>
                 );
               })}
             </div>
+            <a style={style.vaciarCarrito} className="waves-effect waves-light btn-small"
+              onClick={vaciarCarrito}>
+              Vaciar carrito
+            </a>
             <p style={style.pTotal}>TOTAL: ${totales.total}</p>
-            <Link to="/checkout">
-              <a style={style.finalizarCompra} className="waves-effect waves-light btn-large">
-                Finalizar compra
-              </a>
+            <Link to="/checkout" style={style.finalizarCompra} className="waves-effect waves-light btn-large">
+              Finalizar compra
             </Link>
           </div>
         </>
@@ -87,7 +93,7 @@ const style = {
     justifyContent: "spaceBetween",
     gap: "50px",
     padding: "2rem",
-    borderBottom:"solid 1px grey"
+    borderBottom: "solid 1px grey"
   },
   divImgCarrito: {
     width: "100px",
